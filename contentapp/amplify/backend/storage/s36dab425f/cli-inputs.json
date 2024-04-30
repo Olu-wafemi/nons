@@ -1,0 +1,14 @@
+{
+  "resourceName": "s36dab425f",
+  "policyUUID": "6dab425f",
+  "bucketName": "contentappc61aa4bb8f02412db381a93cd2c540fc",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE"
+  ],
+  "triggerFunction": "S3Trigger5e41d092",
+  "groupAccess": {}
+}

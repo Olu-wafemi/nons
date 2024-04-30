@@ -1,0 +1,336 @@
+/* App.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.App-nav {
+  width: 240px;
+  background-color: #333;
+  padding: 20px;
+  height: 100vh; /* Full-height navigation */
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+}
+
+.App-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.App-nav li {
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+.App-nav li a {
+  text-decoration: none;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+}
+
+.App-nav li a:hover, .App-nav li a:focus {
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+
+.App-nav li a svg {
+  margin-right: 10px;
+}
+
+.App-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto; /* Makes it scrollable */
+}
+
+.App-header {
+  background-color: #222;
+  padding: 10px 20px;
+  font-size: 24px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* ContentList Styles */
+.ContentList {
+  padding: 20px;
+  background-color: #2c3e50; /* Dark shade of blue */
+  color: white;
+}
+
+.ContentList input[type="text"] {
+  padding: 8px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  width: 300px; /* Fixed width */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Ensures that the border is neat */
+  background-color: #34495e; /* Slightly lighter shade of blue */
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #7f8c8d; /* Soft grey for light border */
+}
+
+th {
+  background-color: #1abc9c; /* Stylish teal header */
+}
+
+tr:hover {
+  background-color: #16a085; /* A darker shade of teal for hover effect */
+}
+
+button {
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn {
+  background-color: #f39c12; /* Orange color for edit buttons */
+}
+
+.edit-btn:hover {
+  background-color: #e67e22; /* Darker shade of orange */
+}
+
+.approve-btn {
+  background-color: #35b90c; /* Green color for approve buttons */
+}
+
+.approve-btn:hover {
+  background-color: #21911e; /* Darker shade of Green */
+}
+
+.delete-btn {
+  background-color: #e74c3c; /* Red color for delete buttons */
+}
+
+.delete-btn:hover {
+  background-color: #c0392b; /* Darker shade of red */
+}
+
+/* React Modal Styles (for react-modal) */
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  border: 1px solid #ccc;
+  background: #2c3e50;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .ContentList input[type="text"] {
+    width: 100%; /* Full width on small screens */
+  }
+
+  table {
+    font-size: 14px; /* Smaller font size for table on small screens */
+  }
+
+  th, td {
+    padding: 8px; /* Smaller padding for cells on small screens */
+  }
+}
+
+/* ContentForm Styles */
+.content-form-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #34495e;
+  color: #ecf0f1;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.content-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+.submit-btn {
+  grid-column: span 2;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #2ecc71;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Styling for all form input elements including select combobox */
+.content-form .form-group input,
+.content-form .form-group select {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Specific styling for select elements */
+.content-form .form-group select {
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Styling for options inside the select */
+.content-form .form-group select option {
+    padding: 10px;
+}
+
+/* Hover and focus states for enhanced usability */
+.content-form .form-group input:hover,
+.content-form .form-group select:hover {
+    border-color: #888;
+}
+
+.content-form .form-group input:focus,
+.content-form .form-group select:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+/* Error styling for inputs and select */
+.content-form .error {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+.content-edit-container {
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin: 20px;
+}
+
+.form-heading {
+  color: #333;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.text-input, .textarea-input, .number-input, .select-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Makes sure padding does not affect width */
+}
+
+.textarea-input {
+  height: 100px;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+}
+
+.button-group {
+  text-align: right;
+}
+
+.submit-btn, .cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.submit-btn {
+  background-color: #5cb85c;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #f0ad4e;
+  color: white;
+}
